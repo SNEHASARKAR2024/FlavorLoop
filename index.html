@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🍽️ FlavorLoop — Recipe Finder</title>
+  <!-- Link stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Small note: you can change theme colors in :root CSS vars inside style.css -->
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" onclick="navigate('#home')">
+      <div class="brand-logo">🍽️</div>
+      <div class="brand-title">FlavorLoop</div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-btn" onclick="navigate('#home')">Home</button>
+      <button class="nav-btn" onclick="navigate('#categories')">Categories</button>
+      <button class="nav-btn" onclick="navigate('#explore')">Explore</button>
+      <button class="nav-btn" onclick="navigate('#favorites')">Favorites <span id="favCount" class="badge">0</span></button>
+    </nav>
+
+    <div class="search-area">
+      <input id="searchInput" type="search" placeholder="Search recipes, e.g., 'chicken biryani'..." autocomplete="off" />
+      <div id="suggestions" class="suggestions"></div>
+      <button id="searchBtn" class="search-btn" onclick="onSearchClick()">Search</button>
+    </div>
+
+    <button id="menuToggle" class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+  </header>
+
+  <aside id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <button onclick="navigate('#home')">Home</button>
+    <button onclick="navigate('#categories')">Categories</button>
+    <button onclick="navigate('#explore')">Explore</button>
+    <button onclick="navigate('#favorites')">Favorites</button>
+  </aside>
+
+  <main id="app" class="app">
+    <!-- Router injects content here -->
+  </main>
+
+  <footer class="footer">
+    Built with TheMealDB • Demo • Change theme variables in style.css
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
